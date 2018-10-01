@@ -8,7 +8,7 @@
                     <div *ngIf="registerForm.controls.name.errors.required">Nome é obrigatório</div>
                 </div>
                 <br>
-                <input type="text" class="form-control" formControlName="cpf" id="exampleInputLastname1" placeholder="Sobrenome" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.cpf.errors }">
+                <input type="text" class="form-control" formControlName="cpf" id="exampleInputLastname1" placeholder="Cpf" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.cpf.errors }">
                 <div *ngIf="submitted && registerForm.controls.cpf.errors" class="invalid-feedback">
                     <div *ngIf="registerForm.controls.cpf.errors.required">Cpf é obrigatório</div>
                 </div>
@@ -27,7 +27,7 @@
             <br>
             <br>
             <div *ngIf="registerSuccess" class="alert alert-success" role="alert">
-             Cadastro realizado com sucesso!
+             Cadastro realizado com sucesso! 
             </div>
             <br>
             <small id="register" class="form-text text-muted">Ao se cadastrar você concorda com nossos <strong>Termos de Serviço</strong> e com a <strong>Política de Privacidade</strong></small>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ApiService } from './../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -13,13 +15,13 @@ export class CadastroUsuarioComponent implements OnInit {
   submitted = false;
   registerSuccess = false;
 
-  constructor() { }
+  constructor(private  apiService:  ApiService, private router: Router) { }
 
   ngOnInit() {
     this.registerForm = new FormGroup({
       name: new FormControl('', Validators.required),
       cpf: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required)
     });
 
@@ -30,10 +32,23 @@ export class CadastroUsuarioComponent implements OnInit {
     if(this.registerForm.invalid){
       return;
     }
-
-    this.registerSuccess = true;
+    this.register();
   }
 
+  register = function(){
+    let user = {
+      "name": this.registerForm.controls.name.value,
+      "cpf": this.registerForm.controls.cpf.value,
+      "email":this.registerForm.controls.email.value,
+      "password":this.registerForm.controls.password.value
+    }
 
+    this.apiService.createUser(user).subscribe((response) => {
+      this.registerSuccess = true;
+      setTimeout(() => {
+        this.router.navigate(['./login'])
+      }, 2000);
+    });
+  }
 
 }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule, MatCheckboxModule, MatFormFieldModule, MatCardModule, MatButtonModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -39,7 +40,8 @@ const ANGULAR_MODULES = [
   BrowserModule, 
   AppRoutingModule, 
   ReactiveFormsModule, 
-  FormsModule
+  FormsModule, 
+  HttpClientModule
 ]
 
 

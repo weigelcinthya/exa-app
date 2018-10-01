@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from './../api.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup
   submitted = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private apiService: ApiService) { }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -25,10 +26,16 @@ export class LoginComponent implements OnInit {
 
   login = function(){
     this.submitted = true;
-    if(this.loginForm.invalid){
-      return;
+    if(!this.loginForm.invalid){
+      this.apiService.getUsers().subscribe((response) => {
+        let users = response;
+        users.forEach(user => {
+          if(user.email == this.loginForm.controls.email.value){
+            this.router.navigate(['./feed'])
+          }
+        })
+      });
     }
-    this.router.navigate(['./feed'])
   }
 
   register = function(){
