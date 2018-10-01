@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule, MatCheckboxModule, MatFormFieldModule, MatCardModule, MatButtonModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -24,6 +26,23 @@ const appRoutes: Routes = [
   { path: '**', component: LoginComponent }
 ];
 
+const ANGULAR_MATERIAL = [
+  BrowserAnimationsModule, 
+  MatInputModule, 
+  MatCheckboxModule,
+  MatFormFieldModule, 
+  MatCardModule,
+  MatButtonModule
+]
+
+const ANGULAR_MODULES = [
+  BrowserModule, 
+  AppRoutingModule, 
+  ReactiveFormsModule, 
+  FormsModule
+]
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,11 +51,12 @@ const appRoutes: Routes = [
     FeedComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, BrowserAnimationsModule, RouterModule.forRoot(
+    ANGULAR_MODULES, ANGULAR_MATERIAL, RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } 
     )
   ],
+  exports: [ANGULAR_MATERIAL],
   providers: [],
   bootstrap: [AppComponent]
 })

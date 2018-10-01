@@ -1,0 +1,26 @@
+.container {
+    margin-top: 150px;
+    width: 40%;
+}
+
+.title{
+    text-align: center;
+}
+
+.link {
+    cursor: pointer;
+    text-decoration-color: #303633 !important;
+    text-decoration: underline !important;
+}
+
+.form-text{
+    margin-left: 5.5rem;
+}
+
+button {
+    margin-left: 10.7rem;
+}
+
+
+
+
