@@ -1,3 +1,35 @@
-<p>
-  feed works!
-</p>
+<div class="container">
+  <header>
+      <div class ="container-fluid">
+          <div class ="row">
+            <div class ="col-md-6 col-sm-6">
+              <h3>app-exa</h3>
+            </div>
+            <div class ="col-md-6 col-sm-6">
+              <button type="submit" class="btn btn-primary d-block mr-0 ml-auto" (click)="logout()">Logout</button>
+            </div>
+          </div>
+        </div>
+  </header>   
+  <hr>
+
+  <div class="jumbotron">
+      <div class="form-group" [formGroup]="formPost">
+        <textarea class="form-control" formControlName="text" id="exampleFormControlTextarea1" rows="3" placeholder="O que está acontecendo?" [ngClass]="{ 'is-invalid': submitted && formPost.controls.text.errors }"></textarea>
+        <div *ngIf="submitted && formPost.controls.text.errors" class="invalid-feedback">
+            <div *ngIf="formPost.controls.text.errors.required">Este campo é obrigatório</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary d-block mr-0 ml-auto" (click)="createNewPost()">Salvar</button>
+      <div class="row">
+          <div class="card" *ngFor="let post of posts"> 
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>{{post.text}}</p>
+                <footer class="blockquote-footer">{{post.user.name}}</footer>
+              </blockquote>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>

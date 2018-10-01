@@ -16,6 +16,10 @@
             <button type="submit" class="btn btn-primary" (click)="login()">Acessar</button>
             <br>
             <br>
+            <div *ngIf="userNotFound" class="alert alert-danger" role="alert">
+               Usuário não encontrado!
+            </div>
+            <br>
             <small id="register" class="form-text text-muted">Ainda não possui uma conta? <a class="link" (click)="register()">Cadastre-se.</a></small>
         </form>
     </div> 

@@ -13,8 +13,11 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup
   submitted = false;
+  userNotFound = false;
 
-  constructor(private router: Router, private apiService: ApiService) { }
+  constructor(private router: Router, private apiService: ApiService) {
+    
+  }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -31,7 +34,9 @@ export class LoginComponent implements OnInit {
         let users = response;
         users.forEach(user => {
           if(user.email == this.loginForm.controls.email.value){
-            this.router.navigate(['./feed'])
+            this.router.navigate(['./feed/' + user.id])
+          } else {
+            this.userNotFound = true;
           }
         })
       });

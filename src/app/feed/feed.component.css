@@ -1,0 +1,21 @@
+h3 {
+    margin-top: 8px;
+}
+
+button {
+    margin-top: 8px;
+}
+
+header {
+    height: 32px;
+}
+
+.jumbotron{
+    width: 70%;
+    float: right;
+}
+
+.card {
+    margin-top: 8px;
+    min-width: 100% !important;
+}

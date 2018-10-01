@@ -8,7 +8,7 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
 const routes = [
   {'path': 'login', component: LoginComponent}, 
   {'path': 'cadastro-usuario', component: CadastroUsuarioComponent}, 
-  {'path': 'feed', component: FeedComponent}, 
+  {'path': 'feed/:id', component: FeedComponent}, 
 ]
 
 @NgModule({

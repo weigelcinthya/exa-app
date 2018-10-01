@@ -1,12 +1,12 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 body {
-    background-color: #303633 !important;
+    background-color: #DBE1E4 !important;
 }
 
 .btn-primary {
-    background-color: #303633 !important;
-    border-color: #303633 !important;
+    background-color: #4281A4 !important;
+    border-color: #4281A4 !important;
 }
 
 .jumbotron {
