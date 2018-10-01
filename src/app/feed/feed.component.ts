@@ -58,9 +58,16 @@ export class FeedComponent implements OnInit {
       }
       this.apiService.createPost(post).subscribe((response) => {
         this.getPosts();
+        this.clean();
       });
     }
     
+  }
+
+  clean = function(){
+    console.log(this.formPost.controls.text.value)
+    this.formPost.controls.text.value = "";
+    console.log(this.formPost.controls.text.value)
   }
 
   logout = function(){

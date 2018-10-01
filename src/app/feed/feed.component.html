@@ -13,23 +13,46 @@
   </header>   
   <hr>
 
-  <div class="jumbotron">
-      <div class="form-group" [formGroup]="formPost">
-        <textarea class="form-control" formControlName="text" id="exampleFormControlTextarea1" rows="3" placeholder="O que está acontecendo?" [ngClass]="{ 'is-invalid': submitted && formPost.controls.text.errors }"></textarea>
-        <div *ngIf="submitted && formPost.controls.text.errors" class="invalid-feedback">
-            <div *ngIf="formPost.controls.text.errors.required">Este campo é obrigatório</div>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary d-block mr-0 ml-auto" (click)="createNewPost()">Salvar</button>
-      <div class="row">
-          <div class="card" *ngFor="let post of posts"> 
-            <div class="card-body">
-              <blockquote class="blockquote mb-0">
-                <p>{{post.text}}</p>
-                <footer class="blockquote-footer">{{post.user.name}}</footer>
-              </blockquote>
+  <div class="container-fluid">
+    <div class="row">
+        <div class ="col-md-3 col-sm-3">
+            <div class="card bg-light mb-3">
+              <div class="card-header">{{user.name}}</div>
+              <div class="card-body">
+                <h5 class="card-title">Sobre mim</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sapien ex, vestibulum vitae ex ac, lobortis pellentesque augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+              </div>
             </div>
-          </div>
-      </div>
+        </div>
+        <div class ="col-md-9 col-sm-9">
+            <div class="jumbotron">
+                <div class="form-group" [formGroup]="formPost">
+                  <textarea class="form-control" formControlName="text" id="exampleFormControlTextarea1" rows="3" placeholder="O que está acontecendo?" [ngClass]="{ 'is-invalid': submitted && formPost.controls.text.errors }"></textarea>
+                  <div *ngIf="submitted && formPost.controls.text.errors" class="invalid-feedback">
+                      <div *ngIf="formPost.controls.text.errors.required">Este campo é obrigatório</div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary d-block mr-0 ml-auto" (click)="createNewPost()">Salvar</button>
+                <div class="row">
+                    <div class="card" *ngFor="let post of posts"> 
+                      <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                          <p>{{post.text}}</p>
+                          <footer class="blockquote-footer">{{post.user.name}}</footer>
+                        </blockquote>
+                      </div>
+                    </div>
+                </div>
+              </div>
+        </div>
     </div>
+  </div>
+
+
+ 
+  
+    
+
+
+  
 </div>
