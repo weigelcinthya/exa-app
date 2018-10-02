@@ -58,6 +58,7 @@ export class FeedComponent implements OnInit {
         }
       }
       this.apiService.createPost(post).subscribe((response) => {
+        this.submitted = false;
         this.getPosts();
         this.clean();
       });
