@@ -11,5 +11,7 @@ Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli
 ## Para rodar o projeto 
 
 	- npm install 
-	- ng serve --open (será automaticamente redirecionado para http://localhost:4200/login)
+	- npm start
+	
+	O app estará disponível em: http://localhost:4200/login
 	
