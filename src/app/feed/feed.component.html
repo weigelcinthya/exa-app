@@ -12,12 +12,11 @@
         </div>
   </header>   
   <hr>
-
   <div class="container-fluid">
     <div class="row">
         <div class ="col-md-3 col-sm-3">
             <div class="card bg-light mb-3">
-              <div class="card-header">{{user.name}}</div>
+              <div class="card-header"><i class="fas fa-user"></i>{{userName}}</div>
               <div class="card-body">
                 <h5 class="card-title">Sobre mim</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sapien ex, vestibulum vitae ex ac, lobortis pellentesque augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
@@ -26,6 +25,7 @@
         </div>
         <div class ="col-md-9 col-sm-9">
             <div class="jumbotron">
+                <h4>Bem vindo(a), {{userName}}</h4>
                 <div class="form-group" [formGroup]="formPost">
                   <textarea class="form-control" formControlName="text" id="exampleFormControlTextarea1" rows="3" placeholder="O que está acontecendo?" [ngClass]="{ 'is-invalid': submitted && formPost.controls.text.errors }"></textarea>
                   <div *ngIf="submitted && formPost.controls.text.errors" class="invalid-feedback">

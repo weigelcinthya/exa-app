@@ -16,10 +16,10 @@ export class FeedComponent implements OnInit {
   userId: any;
   urlParams: any;
   user: any;
+  userName: string;
 
   constructor(private apiService: ApiService, private router: Router, private activatedRoute: ActivatedRoute) { 
     this.activatedRoute.params.subscribe( params => {
-      console.log(params);
       this.urlParams = params;
     });
   }
@@ -29,6 +29,7 @@ export class FeedComponent implements OnInit {
       text: new FormControl('', Validators.required)
     });
 
+
     this.getUserById();
     this.getPosts();
   }
@@ -37,12 +38,12 @@ export class FeedComponent implements OnInit {
     this.apiService.getUserById(this.urlParams.id)
       .subscribe((response) => {
         this.user = response;
+        this.userName = this.user.name;
       })
   }
 
   getPosts = function(){
     this.apiService.getPosts().subscribe((response) => {
-      console.log(response);
       this.posts = response;
     });
   }
@@ -62,12 +63,6 @@ export class FeedComponent implements OnInit {
       });
     }
     
-  }
-
-  clean = function(){
-    console.log(this.formPost.controls.text.value)
-    this.formPost.controls.text.value = "";
-    console.log(this.formPost.controls.text.value)
   }
 
   logout = function(){
