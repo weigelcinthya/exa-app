@@ -25,7 +25,7 @@
         </div>
         <div class ="col-md-9 col-sm-9">
             <div class="jumbotron">
-                <h4>Bem vindo(a), {{userName}}</h4>
+                <h4>Bem vindo(a), {{userName}}!</h4>
                 <div class="form-group" [formGroup]="formPost">
                   <textarea class="form-control" formControlName="text" id="exampleFormControlTextarea1" rows="3" placeholder="O que está acontecendo?" [ngClass]="{ 'is-invalid': submitted && formPost.controls.text.errors }"></textarea>
                   <div *ngIf="submitted && formPost.controls.text.errors" class="invalid-feedback">
