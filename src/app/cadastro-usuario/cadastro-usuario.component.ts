@@ -29,10 +29,9 @@ export class CadastroUsuarioComponent implements OnInit {
 
   registerUser = function(){
     this.submitted = true; 
-    if(this.registerForm.invalid){
-      return;
+    if(!this.registerForm.invalid){
+      this.register();
     }
-    this.register();
   }
 
   register = function(){
@@ -43,8 +42,9 @@ export class CadastroUsuarioComponent implements OnInit {
       "password":this.registerForm.controls.password.value
     }
 
-    this.apiService.createUser(user).subscribe((response) => {
+    this.apiService.createUser(user).subscribe(() => {
       this.registerSuccess = true;
+      this.submitted = false;
       setTimeout(() => {
         this.router.navigate(['./login'])
       }, 2000);

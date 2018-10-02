@@ -1,5 +1,5 @@
 .container {
-    margin-top: 150px;
+    margin-top: 116px;
     width: 40%;
 }
 
@@ -9,7 +9,6 @@
 
 .link {
     cursor: pointer;
-    text-decoration-color: #303633 !important;
     text-decoration: underline !important;
 }
 
@@ -17,9 +16,21 @@
     margin-left: 5.5rem;
 }
 
-button {
-    margin-left: 10.7rem;
+.btn-access {
+    text-align: center;
 }
+
+.image-logo{
+    text-align: center;
+    margin-top: -60px;
+
+}
+
+img {
+    height: 150px;
+}
+
+
 
 
 

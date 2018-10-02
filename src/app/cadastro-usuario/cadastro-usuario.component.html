@@ -1,7 +1,7 @@
 <div class="container">
     <div class="jumbotron">
         <form [formGroup]="registerForm">
-            <h4 class="title">Cadastro</h4>
+            <h4 class="title">Crie sua conta</h4>
             <div class="form-group">
                 <input type="text" class="form-control" formControlName="name" id="exampleInputNamel1" aria-describedby="emailHelp" placeholder="Nome" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.name.errors }">
                 <div *ngIf="submitted && registerForm.controls.name.errors" class="invalid-feedback">
@@ -22,8 +22,11 @@
                 <div *ngIf="submitted && registerForm.controls.password.errors" class="invalid-feedback">
                     <div *ngIf="registerForm.controls.password.errors.required">Senha é obrigatório</div>
                 </div>
-              </div>
-            <button type="submit" class="btn btn-primary" (click)="registerUser()">Cadastrar</button>
+            </div>
+            <div class="btn-register">
+                <button type="submit" class="btn btn-primary" (click)="registerUser()">Cadastrar</button>
+            </div>
+            
             <br>
             <br>
             <div *ngIf="registerSuccess" class="alert alert-success" role="alert">

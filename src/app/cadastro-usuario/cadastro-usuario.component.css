@@ -1,16 +1,17 @@
 .container {
     width: 40%;
-    margin-top:60px;
+    margin-top:48px;
 }
 
 .title{
-    text-align: center;
+    text-align: left;
+    font-weight: bold;
 }
 
 .alert {
     text-align: center;
 }
 
-button {
-    margin-left: 10.7rem;
+.btn-register {
+    text-align: center;
 }

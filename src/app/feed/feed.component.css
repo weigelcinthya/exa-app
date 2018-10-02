@@ -3,11 +3,11 @@ h3 {
 }
 
 button {
-    margin-top: 8px;
+    margin-top: 16px;
 }
 
 header {
-    height: 32px;
+    height: 48px;
 }
 
 .jumbotron{
@@ -19,4 +19,8 @@ header {
 .card {
     margin-top: 8px;
     min-width: 100% !important;
+}
+
+img {
+    height: 80px;
 }
