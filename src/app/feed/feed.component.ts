@@ -12,7 +12,7 @@ export class FeedComponent implements OnInit {
 
   formPost: FormGroup
   submitted = false;
-  posts: any;
+  posts = [];
   userId: any;
   urlParams: any;
   user: any;
@@ -29,7 +29,7 @@ export class FeedComponent implements OnInit {
       text: new FormControl('', Validators.required)
     });
 
-
+   
     this.getUserById();
     this.getPosts();
   }
