@@ -6,6 +6,8 @@ Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli
 	- Node.js
 	- Npm 
 
+	O download pode ser feito através do link: https://www.npmjs.com/get-npm
+
 ## Para rodar o projeto 
 
 	- npm install 
