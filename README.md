@@ -1,4 +1,4 @@
-# AppExablack
+# Aplicação para criação de Posts
 
 Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
